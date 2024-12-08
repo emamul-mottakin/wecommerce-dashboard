@@ -2,11 +2,17 @@ import { FaAngleDown } from "react-icons/fa";
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
-export default function Menu() {
+export default function Menu({ sideBarStatus, setSideBarStatus }) {
+  function handleSideBar() {
+    setSideBarStatus((sideBarStatus = !sideBarStatus));
+    console.log(sideBarStatus);
+  }
+
   return (
     <nav className="px-4 bg-white shadow-md w-full text-gray-600">
       <div className="flex justify-between items-center h-[70px]">
-        <button className="text-2xl cursor-pointer">
+        {/* sidebar open | close icon */}
+        <button className="text-2xl cursor-pointer" onClick={handleSideBar}>
           <HiBars3BottomLeft />
         </button>
 
